@@ -45,6 +45,8 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
 });
 ///
 
+Route::post('/search','HomeController@search');
+
 
 
 
