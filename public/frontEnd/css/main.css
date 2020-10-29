@@ -2520,4 +2520,24 @@ h2.title {
   color: #F4D9D9;
 }
 
+/* -----------Search-------------------------- */
+.in-search {
+    border: none !important;
+    padding: 25px !important;
+    background-color: #faf6f6 !important;
+    width: 80% !important;
+    border-radius: 0 !important;
+}
+.wrapper-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-sub {
+    padding: 15.4px !important;
+    margin-top: 0 !important;
+    color: rgb(122, 121, 121) !important;
+    font-weight: 600;
+}
+
 

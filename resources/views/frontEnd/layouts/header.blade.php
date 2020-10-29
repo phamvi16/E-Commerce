@@ -106,9 +106,13 @@
                     </div> --}}
                     <form action="{{URL::to('/search')}}" method="POST">
                         {{csrf_field()}}
-                        <div class="search_box pull-right">
+                        {{-- <div class="search_box pull-right">
                             <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
                             <input type="submit" style="margin-top:0;color:#333; width: 30%; font-weight: 600" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
+                        </div> --}}
+                        <div class="form-group wrapper-search">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm.." class="form-control in-search">
+                            <input type="submit" name="search_items" value="Tìm kiếm" class="btn btn-primary btn-sub">
                         </div>
                     </form>
                 </div>
