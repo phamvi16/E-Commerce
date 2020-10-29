@@ -4,8 +4,8 @@
 
 	var RGBChange = function() {
 	  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
-	};	
-		
+	};
+
 /*scroll to top*/
 
 $(document).ready(function(){
@@ -46,7 +46,7 @@ $(document).ready(function(){
 					}else{
                         $("#buttonAddToCart").show();
                         $("#availableStock").text("In Stock");
-                        $("#inputStock").val(arr[1]);
+                        $("#inputStock").val(1);
 					}
                 },error:function () {
                     alert("Error Select Size");
