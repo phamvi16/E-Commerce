@@ -101,9 +101,16 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="search_box pull-right">
+                    {{-- <div class="search_box pull-right">
                         <input type="text" placeholder="Search"/>
-                    </div>
+                    </div> --}}
+                    <form action="{{URL::to('/search')}}" method="POST">
+                        {{csrf_field()}}
+                        <div class="search_box pull-right">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="submit" style="margin-top:0;color:#fff; width: 30%" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
