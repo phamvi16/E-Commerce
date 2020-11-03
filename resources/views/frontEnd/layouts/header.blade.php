@@ -29,8 +29,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="logo pull-left">
-                        <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/logo.png')}}" alt="" /></a>
+                    <div class="logo pull-left " >
+                        <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/logo.png')}}" alt=""  style="width:100px;height:50px"/></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
