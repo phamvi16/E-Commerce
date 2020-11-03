@@ -28,12 +28,16 @@ class HomeController extends Controller
         return view('home');
     }
     public function search(Request $request){
+        $meta_desc = 'Tìm kiếm';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
         $keywords = $request->keywords_submit;
 
         $all_category = Category_model::All();
         $search_product = Products_model::where('p_name', 'like', '%' .$keywords. '%')->get();
 
-        return view('frontEnd.search')->with('search_product',$search_product)->with('all_category', $all_category);
+        return view('frontEnd.search',compact('search_product','all_category','meta_desc','meta_title','meta_keywords','url_canonical'));
 
    }
 }
