@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class UsersController extends Controller
 {
     public function index(Request $request){
-        $meta_desc = 'Giỏ hàng của tôi';
+        $meta_desc = 'Đăng nhập/Đăng ký';
         $meta_title ='';
         $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
         $url_canonical = $request->url();
