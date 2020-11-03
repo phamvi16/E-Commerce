@@ -54,6 +54,6 @@
 
         </div>
     </section>
-<!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading..." data-fw-param="138506/"></script> <!-- end feedwind code -->
+
 
 @endsection
