@@ -12,60 +12,52 @@
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
                             <a href="#">
-                                <div class="iframe-img">
-                                    <img src="{{asset('frontEnd/images/home/iframe1.png')}}" alt="" />
-                                </div>
-                                <div class="overlay-icon">
-                                    <i class="fa fa-play-circle-o"></i>
+                                <div>
+                                <video width="150px" height="90px" controls>
+                                    <source src="{{asset('img/VD01.mp4')}}" type="video/mp4">
+                                </video>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Gợi ý những set đồ sành điệu cho ngày đầu năm</p>
                         </div>
                     </div>
 
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
                             <a href="#">
-                                <div class="iframe-img">
-                                    <img src="{{asset('frontEnd/images/home/iframe2.png')}}" alt="" />
-                                </div>
-                                <div class="overlay-icon">
-                                    <i class="fa fa-play-circle-o"></i>
+                                <div>
+                                <video width="150px" height="90px" controls>
+                                    <source src="{{asset('img/VD02.mp4')}}" type="video/mp4">
+                                </video>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Một số mẹo mặc đẹp tuyệt hay cho nàng mũm mĩm</p>
                         </div>
                     </div>
 
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
                             <a href="#">
-                                <div class="iframe-img">
-                                    <img src="{{asset('frontEnd/images/home/iframe3.png')}}" alt="" />
-                                </div>
-                                <div class="overlay-icon">
-                                    <i class="fa fa-play-circle-o"></i>
+                                <div>
+                                <video width="150px" height="90px" controls>
+                                    <source src="{{asset('img/VD03.mp4')}}" type="video/mp4">
+                                </video>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Học cách phối đồ như fashionista trong 30 giây</p>
                         </div>
                     </div>
 
                     <div class="col-sm-3">
-                        <div class="video-gallery text-center">
+                    <div class="video-gallery text-center">
                             <a href="#">
-                                <div class="iframe-img">
-                                    <img src="{{asset('frontEnd/images/home/iframe4.png')}}" alt="" />
-                                </div>
-                                <div class="overlay-icon">
-                                    <i class="fa fa-play-circle-o"></i>
+                                <div>
+                                <video width="150px" height="90px" controls>
+                                    <source src="{{asset('img/VD04.mp4')}}" type="video/mp4">
+                                </video>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Loạt mẹo thời trang cực hay mà chị em nên bỏ túi</p>
                         </div>
                     </div>
                 </div>
