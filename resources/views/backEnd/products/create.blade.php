@@ -65,8 +65,8 @@
                     </div>
                     <div class="control-group">
                         <label for="price" class="control-label">Price</label>
-                        <div class="controls{{$errors->has('price')?' has-error':''}}">
-                            <div class="input-prepend"> <span class="add-on">$</span>
+                        <div class="controls{{number_format($errors->has('price')?' has-error':'')}}">
+                            <div class="input-prepend"> <span class="add-on">đ</span>
                                 <input type="number" name="price" id="price" class="" value="{{old('price')}}" title="" required="required">
                                 <span class="text-danger">{{$errors->first('price')}}</span>
                             </div>
