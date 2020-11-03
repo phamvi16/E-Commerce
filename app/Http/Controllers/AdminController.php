@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $meta_desc = 'Giỏ hàng của tôi';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
         $menu_active=1;
-        return view('backEnd.index',compact('menu_active'));
+        return view('backEnd.index',compact('menu_active','meta_title','meta_keywords','url_canonical'));
     }
     public function settings(){
         $menu_active=0;
