@@ -1,7 +1,10 @@
 @extends('backEnd.layouts.master')
 @section('title','List Products')
 @section('content')
-    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('product.index')}}" class="current">Products</a></div>
+    <div id="breadcrumb">
+        <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
+        <a href="{{route('product.index')}}" class="current">Products</a>
+    </div>
     <div class="container-fluid">
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">

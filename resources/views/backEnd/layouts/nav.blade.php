@@ -20,6 +20,12 @@
                 <li><a href="{{route('coupon.index')}}">List Coupons</a></li>
             </ul>
         </li>
+        <li class="submenu {{$menu_active == 5? 'active':''}}" > <a href="#"><i class="icon icon-th-list"></i> <span>Sliders</span></a>
+            <ul>
+                <li><a href="{{route('slider.create')}}">Add New Slider</a></li>
+                <li><a href="{{route('slider.index')}}">List Sliders</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 <!--sidebar-menu-->
