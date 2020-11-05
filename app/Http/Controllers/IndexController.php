@@ -68,12 +68,8 @@ class IndexController extends Controller
         $imagesGalleries=ImageGallery_model::where('products_id',$detail_product->id)->get();
         $relateProducts=Products_model::where([['seo',$seo],['categories_id',$detail_product->categories_id]])->get();
         $totalStock=ProductAtrr_model::where('products_id',$detail_product->id)->sum('stock');
-
-        $detail_product=Products_model::findOrFail($id);
-        $imagesGalleries=ImageGallery_model::where('products_id',$id)->get();
         $sliders = Slider_model::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
-        $totalStock=ProductAtrr_model::where('products_id',$id)->sum('stock');
-        $relateProducts=Products_model::where([['id',$id],['categories_id',$detail_product->categories_id]])->get();
+
         foreach($relateProducts as $key => $value){
                 $meta_desc = $value->description;
                 $meta_title =' | '. $value->p_name;
