@@ -10,43 +10,20 @@
                     </ol>
 
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Online Shopping</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset('frontEnd/images/home/girl1.jpg')}}" class="girl img-responsive" alt="" />
-                                <img src="{{asset('frontEnd/images/home/pricing.png')}}"  class="pricing" alt="" />
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Shop Now!</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset('frontEnd/images/home/girl2.jpg')}}" class="girl img-responsive" alt="" />
-                                <img src="{{asset('frontEnd/images/home/pricing.png')}}"  class="pricing" alt="" />
-                            </div>
-                        </div>
+                        @php
+                            $i = 0;
+                        @endphp
+                        @foreach($sliders as $sli)
+                            @php
+                                $i++;
+                            @endphp
 
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Shop Everything Everywhere</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                            <div class="item {{$i==1 ? 'active' : '' }}">
+                                <div class="col-sm-12">
+                                    <img alt="{{$sli->slider_desc}}" src="{{url('sliders/imgs/',$sli->slider_image)}}" height="200" width="100%" class="img img-responsive">
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset('frontEnd/images/home/girl3.jpg')}}" class="girl img-responsive" alt="" />
-                                <img src="{{asset('frontEnd/images/home/pricing.png')}}" class="pricing" alt="" />
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
 

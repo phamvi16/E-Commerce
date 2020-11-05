@@ -58,36 +58,27 @@ class SliderController extends Controller
         $update_slider=Slider_model::findOrFail($slider_id);
         $this->validate($request,[
             'slider_name'=>'required|min:5',
-            'slider_image'=>'required|image|mimes:png,jpg,jpeg|max:1000',
-            'slider_status'=>'required',
             'slider_desc'=>'required',
         ]);
         $formInput=$request->all();
-        if($request->file('slider_image')){
-            $image=$request->file('slider_image');
-            if($image->isValid()){
-                $fileName=time().'-'.str_slug($formInput['slider_name'],"-").'.'.$image->getClientOriginalExtension();
-                $image_path=public_path('sliders/imgs/'.$fileName);
-                //Resize Image
-                Image::make($image)->save($image_path);
-                $formInput['slider_image']=$fileName;
-            }
-        }else{
-            $formInput['slider_image']=$update_slider['slider_image'];
+
+        if(empty($formInput['slider_status'])){
+            $formInput['slider_status']=0;
         }
         $update_slider->update($formInput);
-        return redirect()->route('slider.index')->with('message','Update Products Successfully!');
+        return redirect()->route('slider.index')->with('message','Update Sliders Successfully!');
     }
-    public function deleteImage($slider_id){
-        $delete_image=Slider_model::findOrFail($slider_id);
-        $image_path=public_path().'/sliders/imgs/'.$delete_image->slider_image;
-        if($delete_image){
-            $delete_image->slider_image='';
-            $delete_image->save();
-            ////// delete image ///
+
+    public function destroy($slider_id)
+    {
+        $delete=Slider_model::findOrFail($slider_id);
+        $image_path=public_path().'/sliders/imgs/'.$delete->slider_image;
+        if($delete->delete()){
             unlink($image_path);
         }
-        return back();
+        return redirect()->route('slider.index')->with('message','Delete Success!');
     }
+
+
 
 }
