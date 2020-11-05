@@ -47,13 +47,17 @@ class UsersController extends Controller
         return redirect('/');
     }
     public function account(Request $request){
+        $sliders = Slider_model::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
+
         $countries=DB::table('countries')->get();
         $user_login=User::where('id',Auth::id())->first();
-        $meta_desc = 'Đăng nhập/Đăng ký';
-        $meta_title ='';
-        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
-        $url_canonical = $request->url();
-        return view('users.account',compact('countries','user_login','meta_desc','meta_title','meta_keywords','url_canonical'));
+        foreach($user_login as $key => $value){
+            $meta_desc = 'abc';
+            $meta_title ='abc';
+            $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+            $url_canonical = $request->url();
+        }
+        return view('users.account',compact('sliders','countries','user_login', 'meta_desc', 'meta_title', 'meta_keywords', 'url_canonical'));
     }
     public function updateprofile(Request $request,$id){
         $this->validate($request,[
