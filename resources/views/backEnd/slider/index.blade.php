@@ -38,7 +38,7 @@
                             <td style="text-align: center;">{{($sli->slider_status==0)?' Disabled':'Enable'}}</td>
                             <td style="text-align: center; vertical-align: middle;">
                                 <a href="{{route('slider.edit',$sli->slider_id)}}" class="btn btn-primary btn-mini">Edit</a>
-                                <a href="javascript:" rel="{{$sli->slider_id}}" rel1="delete-product" class="btn btn-danger btn-mini deleteRecord">Delete</a>
+                                <a href="javascript:" rel="{{$sli->slider_id}}" rel1="delete-slider" class="btn btn-danger btn-mini deleteRecord">Delete</a>
                             </td>
                         </tr>
                     @endforeach
@@ -58,9 +58,9 @@
     <script src="{{asset('js/matrix.js')}}"></script>
     <script src="{{asset('js/matrix.tables.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    <!-- <script>
+    <script>
         $(".deleteRecord").click(function () {
-           var id=$(this).attr('rel');
+           var slider_id=$(this).attr('rel');
            var deleteFunction=$(this).attr('rel1');
            swal({
                title:'Are you sure?',
@@ -76,8 +76,8 @@
                buttonsStyling:false,
                reverseButtons:true
            },function () {
-              window.location.href="/admin/"+deleteFunction+"/"+id;
+              window.location.href="/admin/"+deleteFunction+"/"+slider_id;
            });
         });
-    </script> -->
+    </script>
 @endsection

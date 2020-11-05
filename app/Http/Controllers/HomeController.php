@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category_model;
 use App\Products_model;
+use App\Slider_model;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,8 @@ class HomeController extends Controller
         return view('home');
     }
     public function search(Request $request){
+        $sliders = Slider_model::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
+
         $meta_desc = 'Tìm kiếm';
         $meta_title ='';
         $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
@@ -37,7 +40,7 @@ class HomeController extends Controller
         $all_category = Category_model::All();
         $search_product = Products_model::where('p_name', 'like', '%' .$keywords. '%')->get();
 
-        return view('frontEnd.search',compact('search_product','all_category','meta_desc','meta_title','meta_keywords','url_canonical'));
+        return view('frontEnd.search',compact('search_product','sliders','all_category','meta_desc','meta_title','meta_keywords','url_canonical'));
 
    }
 }

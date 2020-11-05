@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart_model;
 use App\ProductAtrr_model;
+use App\Slider_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -13,6 +14,7 @@ class CartController extends Controller
     public function index(Request $request ){
         $session_id=Session::get('session_id');
         $cart_datas=Cart_model::where('session_id',$session_id)->get();
+        $sliders = Slider_model::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
         $total_price=0;
         foreach ($cart_datas as $cart_data){
             $total_price+=$cart_data->price*$cart_data->quantity;
@@ -21,7 +23,7 @@ class CartController extends Controller
         $meta_title ='';
         $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
         $url_canonical = $request->url();
-        return view('frontEnd.cart',compact('cart_datas','total_price','meta_desc','meta_title','meta_keywords','url_canonical'));
+        return view('frontEnd.cart',compact('cart_datas','sliders','total_price','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
 
     public function addToCart(Request $request){

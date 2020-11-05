@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile_model;
 use App\User;
+use App\Slider_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,11 +14,12 @@ use Illuminate\Support\Facades\Session;
 class UsersController extends Controller
 {
     public function index(Request $request){
+        $sliders = Slider_model::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
         $meta_desc = 'Đăng nhập/Đăng ký';
         $meta_title ='';
         $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
         $url_canonical = $request->url();
-        return view('users.login_register',compact('meta_desc','meta_title','meta_keywords','url_canonical'));
+        return view('users.login_register',compact('sliders','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
     public function register(Request $request){
         $this->validate($request,[
