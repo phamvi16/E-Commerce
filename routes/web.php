@@ -14,7 +14,7 @@
 Route::get('/','IndexController@index');
 Route::get('/list-products','IndexController@shop');
 Route::get('/cat/{id}','IndexController@listByCat')->name('cats');
-Route::get('/product-detail/{id}','IndexController@detialpro');
+Route::get('/product-detail/{seo}','IndexController@getBySeo');
 ////// get Attribute ////////////
 Route::get('/get-product-attr','IndexController@getAttrs');
 ///// Cart Area /////////
@@ -46,6 +46,8 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
 ///
 
 Route::post('/search','HomeController@search');
+
+Route::get('/contact', 'ContactController@index');
 
 
 

@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\Session;
 
 class CheckOutController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $countries=DB::table('countries')->get();
         $user_login=User::where('id',Auth::id())->first();
-        return view('checkout.index',compact('countries','user_login'));
+        $meta_desc = 'Thanh toán';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
+        return view('checkout.index',compact('countries','user_login','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
     public function submitcheckout(Request $request){
        $this->validate($request,[

@@ -45,6 +45,7 @@
 <script src="{{asset('frontEnd/js/price-range.js')}}"></script>
 <script src="{{asset('frontEnd/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('frontEnd/js/main.js')}}"></script>
+{{-- <script src="{{asset('frontEnd/js/url.js')}}"></script> --}}
 <script src="{{asset('easyzoom/dist/easyzoom.js')}}"></script>
 <script>
     // Instantiate EasyZoom instances

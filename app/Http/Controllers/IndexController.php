@@ -48,7 +48,26 @@ class IndexController extends Controller
         }
         return view('frontEnd.products',compact('list_product','byCate','sliders','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
-    public function detialpro(Request $request,$id){
+    // public function detialpro(Request $request,$id){
+
+    //     $detail_product=Products_model::findOrFail($id);
+    //     $imagesGalleries=ImageGallery_model::where('products_id',$id)->get();
+    //     $totalStock=ProductAtrr_model::where('products_id',$id)->sum('stock');
+    //     $relateProducts=Products_model::where([['id',$id],['categories_id',$detail_product->categories_id]])->get();
+    //     foreach($relateProducts as $key => $value){
+    //             $meta_desc = $value->description;
+    //             $meta_title =' | '. $value->p_name;
+    //             $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+    //             $url_canonical = $request->url();
+    //         }
+    //     return view('frontEnd.product_details',compact('detail_product','imagesGalleries','totalStock','relateProducts','meta_desc','meta_title','meta_keywords','url_canonical'));
+    // }
+    public function getBySeo(Request $request, $seo)
+    {
+        $detail_product = Products_model::where('seo', $seo)->firstOrFail();
+        $imagesGalleries=ImageGallery_model::where('products_id',$detail_product->id)->get();
+        $relateProducts=Products_model::where([['seo',$seo],['categories_id',$detail_product->categories_id]])->get();
+        $totalStock=ProductAtrr_model::where('products_id',$detail_product->id)->sum('stock');
 
         $detail_product=Products_model::findOrFail($id);
         $imagesGalleries=ImageGallery_model::where('products_id',$id)->get();

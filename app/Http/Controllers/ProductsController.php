@@ -50,6 +50,7 @@ class ProductsController extends Controller
             'description'=>'required',
             'price'=>'required|numeric',
             'image'=>'required|image|mimes:png,jpg,jpeg|max:1000',
+            'seo'=>'required'
         ]);
         $formInput=$request->all();
         if($request->file('image')){
