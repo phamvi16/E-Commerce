@@ -42,6 +42,7 @@
                             <span class="text-danger">{{$errors->first('p_name')}}</span>
                         </div>
                     </div>
+
                     <div class="control-group">
                         <label for="p_code" class="control-label">Code</label>
                         <div class="controls{{$errors->has('p_code')?' has-error':''}}">
@@ -80,6 +81,14 @@
                         </div>
                     </div>
                     <div class="control-group">
+                        <label for="seo" class="control-label">SEO</label>
+                        <div class="controls">
+                            <input type="text" name="seo" id="seo" value="{{ old('seo') }}" required="required"/>
+                            <span class="text-danger">{{$errors->first('seo')}}</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
                         <label for="" class="control-label"></label>
                         <div class="controls">
                             <button type="submit" class="btn btn-success">Add New Product</button>
@@ -106,5 +115,13 @@
     <script src="{{asset('js/bootstrap-wysihtml5.js')}}"></script>
     <script>
         $('.textarea_editor').wysihtml5();
+        function slugify(s) {
+            return s.toLowerCase().trim().replace(/[áàảãạăắằẳẵặâấầẩẫậ]/g,'a').replace(/[óòỏõọôốồổỗộơớờởỡợ]/g,'o').replace(/[éèẻẽẹêếềểễệ]/g,'e').replace(/[íìỉĩị]/g,'i').replace(/[úùủũụưứừửữự]/g,'u').replace(/[ýỳỷỹỵ]/g,'y').replace(/[đ]/g,'d').replace(/[^a-z0-9- ]/g,'').replace(/[ ]/g,'-').replace(/[--]+/g,'-');
+        }
+        $(function () {
+            $('#p_name').on('input', function () {
+                console.log($('#seo').val(slugify($(this).val())));
+            });
+        });
     </script>
 @endsection
