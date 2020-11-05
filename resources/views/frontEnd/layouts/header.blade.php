@@ -1,5 +1,7 @@
-<header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
+<header id="header">
+    <!--header-->
+    <div class="header_top">
+        <!--header_top-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -23,14 +25,17 @@
                 </div>
             </div>
         </div>
-    </div><!--/header_top-->
+    </div>
+    <!--/header_top-->
 
-    <div class="header-middle"><!--header-middle-->
+    <div class="header-middle">
+        <!--header-middle-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="logo pull-left " >
-                        <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/logo.png')}}" alt=""  style="width:100px;height:50px"/></a>
+                    <div class="logo pull-left ">
+                        <a href="{{ url('/') }}"><img src="{{ asset('frontEnd/images/home/logo.png') }}" alt=""
+                                style="width:100px;height:50px" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -59,27 +64,30 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{url('/viewcart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            @if(Auth::check())
-                                <li><a href="{{url('/myaccount')}}"><i class="fa fa-user"></i> My Account</a></li>
+                            <li><a href="{{ url('/viewcart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            @if (Auth::check())
+                                <li><a href="{{ url('/myaccount') }}"><i class="fa fa-user"></i> My Account</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Logout </a>
                                 </li>
                             @else
-                                <li><a href="{{url('/login_page')}}"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="{{ url('/login_page') }}"><i class="fa fa-lock"></i> Login</a></li>
                             @endif
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!--/header-middle-->
+    </div>
+    <!--/header-middle-->
 
-    <div class="header-bottom"><!--header-bottom-->
+    <div class="header-bottom">
+        <!--header-bottom-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -88,35 +96,39 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{url('/')}}" class="active">Home</a></li>
-                            <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                            <li><a href="{{ url('/') }}" class="active">Home</a></li>
+                            <li class="dropdown"><a href="javascript:void(0)">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{{url('/list-products')}}">Products</a></li>
-                                    <li><a href="{{url('/myaccount')}}">Account</a></li>
-                                    <li><a href="{{url('/viewcart')}}">Cart</a></li>
+                                    <li><a href="{{ url('/list-products') }}">Products</a></li>
+                                    <li><a href="{{ url('/myaccount') }}">Account</a></li>
+                                    <li><a href="{{ url('/viewcart') }}">Cart</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://www.youtube.com/channel/UCH2Ir7rPaRN8ZPL9mSpclhw" target="_blank">Contact</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     {{-- <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                        <input type="text" placeholder="Search" />
                     </div> --}}
-                    <form action="{{URL::to('/search')}}" method="POST">
-                        {{csrf_field()}}
+                    <form action="{{ URL::to('/search') }}" method="POST">
+                        {{ csrf_field() }}
                         {{-- <div class="search_box pull-right">
-                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
-                            <input type="submit" style="margin-top:0;color:#333; width: 30%; font-weight: 600" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm" />
+                            <input type="submit" style="margin-top:0;color:#333; width: 30%; font-weight: 600"
+                                name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
                         </div> --}}
                         <div class="form-group wrapper-search">
-                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm.." class="form-control in-search">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm.."
+                                class="form-control in-search">
                             <input type="submit" name="search_items" value="Tìm kiếm" class="btn btn-primary btn-sub">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div><!--/header-bottom-->
-</header><!--/header-->
+    </div>
+    <!--/header-bottom-->
+</header>
+<!--/header-->
