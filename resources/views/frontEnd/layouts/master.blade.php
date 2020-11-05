@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title','Master Page'){{$meta_title}}</title>
 
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fa3b987b30a760012e6f42b&product=sticky-share-buttons' async='async'></script>
+
     <meta name="description" content="{{$meta_desc}}">
     <meta name="keywords" content="{{$meta_keywords}}"/>
     <meta name="robots" content="INDEX,FOLLOW"/>
@@ -39,6 +41,10 @@
 @show
 @yield('content')
 @include('frontEnd.layouts.footer')
+
+
+
+
 <script src="{{asset('frontEnd/js/jquery.js')}}"></script>
 <script src="{{asset('frontEnd/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontEnd/js/jquery.scrollUp.min.js')}}"></script>

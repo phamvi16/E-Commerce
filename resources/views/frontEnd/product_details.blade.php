@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','Detial Page')
+@section('title','Details Page')
 @section('slider')
 @endsection
 @section('content')
@@ -72,7 +72,9 @@
                             @endif
                         </p>
                         <p><b>Condition:</b> New</p>
-                        <a href=""><img src="{{asset('frontEnd/images/product-details/share.png')}}" class="share img-responsive"  alt="" /></a>
+                        <br/>
+                        <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+
                     </div><!--/product-information-->
                 </form>
 
