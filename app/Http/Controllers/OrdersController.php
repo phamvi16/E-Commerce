@@ -35,12 +35,20 @@ class OrdersController extends Controller
             return redirect('/paypal');
         }
     }
-    public function cod(){
+    public function cod(Request $request){
         $user_order=Orders_model::where('users_id',Auth::id())->first();
-        return view('payment.cod',compact('user_order'));
+        $meta_desc = 'COD';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
+        return view('payment.cod',compact('user_order','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
     public function paypal(Request $request){
         $who_buying=Orders_model::where('users_id',Auth::id())->first();
-        return view('payment.paypal',compact('who_buying'));
+        $meta_desc = 'Paypal';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
+        return view('payment.paypal',compact('who_buying','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
 }

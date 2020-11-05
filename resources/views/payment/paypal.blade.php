@@ -11,7 +11,7 @@
         <div class="text-center">
             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="henglayshops@gmail.com">
+            <input type="hidden" name="business" value="boodore@gmail.com">
             <input type="hidden" name="item_name" value="Buyer ({{$who_buying->name}})">
             <input type="hidden" name="amount" value="{{$who_buying->grand_total}}">
             <input type="hidden" name="currency_code" value="USD">
