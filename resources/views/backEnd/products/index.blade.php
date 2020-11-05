@@ -1,7 +1,10 @@
 @extends('backEnd.layouts.master')
 @section('title','List Products')
 @section('content')
-    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('product.index')}}" class="current">Products</a></div>
+    <div id="breadcrumb">
+        <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
+        <a href="{{route('product.index')}}" class="current">Products</a>
+    </div>
     <div class="container-fluid">
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">
@@ -22,7 +25,7 @@
                         <th>Under Category</th>
                         <th>Code Of Product</th>
                         <th>Product Color</th>
-                        <th>Price</th>
+                        <th>Price (VND)</th>
                         <th>Image Gallery</th>
                         <th>Add Attribute</th>
                         <th>Action</th>
@@ -38,7 +41,7 @@
                             <td style="vertical-align: middle;">{{$product->category->name}}</td>
                             <td style="vertical-align: middle;">{{$product->p_code}}</td>
                             <td style="vertical-align: middle;">{{$product->p_color}}</td>
-                            <td style="vertical-align: middle;">{{$product->price}}</td>
+                            <td style="vertical-align: middle;">{{ number_format($product->price)}}</td>
                             <td style="vertical-align: middle;text-align: center;"><a href="{{route('image-gallery.show',$product->id)}}" class="btn btn-default btn-mini">Add Images</a></td>
                             <td style="vertical-align: middle;text-align: center;"><a href="{{route('product_attr.show',$product->id)}}" class="btn btn-success btn-mini">Add Attr</a></td>
                             <td style="text-align: center; vertical-align: middle;">

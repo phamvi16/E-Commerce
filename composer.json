@@ -9,8 +9,10 @@
         "butschster/meta-tags": "^1.14",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.4",
-        "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0"
+        "laravel/framework": "5.7.9",
+        "laravel/tinker": "^1.0",
+        "spatie/laravel-feed": "^3.0",
+        "roumen/feed": "^8.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
