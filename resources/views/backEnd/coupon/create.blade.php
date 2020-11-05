@@ -45,7 +45,7 @@
                         <label for="expiry_date" class="control-label">Expiry Date</label>
                         <div class="controls{{$errors->has('expiry_date')?' has-error':''}}">
                             <div class="input-prepend">
-                                <div  data-date="12-02-2012" class="input-append date datepicker">
+                                <div  data-date="" class="input-append date datepicker">
                                     <input type="text" name="expiry_date" id="expiry_date" value="{{old('expiry_date')}}"  data-date-format="yyyy-mm-dd" class="span11" style="width: 375px;" placeholder="yyyy-mm-dd">
                                     <span class="add-on"><i class="icon-th"></i></span>
                                 </div>

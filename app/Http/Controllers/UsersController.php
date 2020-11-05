@@ -12,8 +12,12 @@ use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
 {
-    public function index(){
-        return view('users.login_register');
+    public function index(Request $request){
+        $meta_desc = 'Đăng nhập/Đăng ký';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
+        return view('users.login_register',compact('meta_desc','meta_title','meta_keywords','url_canonical'));
     }
     public function register(Request $request){
         $this->validate($request,[

@@ -10,14 +10,18 @@ use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
-    public function index(){
+    public function index(Request $request ){
         $session_id=Session::get('session_id');
         $cart_datas=Cart_model::where('session_id',$session_id)->get();
         $total_price=0;
         foreach ($cart_datas as $cart_data){
             $total_price+=$cart_data->price*$cart_data->quantity;
         }
-        return view('frontEnd.cart',compact('cart_datas','total_price'));
+        $meta_desc = 'Giỏ hàng của tôi';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
+        return view('frontEnd.cart',compact('cart_datas','total_price','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
 
     public function addToCart(Request $request){

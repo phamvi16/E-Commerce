@@ -3,9 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <title>@yield('title','Master Page'){{$meta_title}}</title>
+
+    <meta name="description" content="{{$meta_desc}}">
+    <meta name="keywords" content="{{$meta_keywords}}"/>
+    <meta name="robots" content="INDEX,FOLLOW"/>
+    <link  rel="canonical" href="{{$url_canonical}}" />
     <meta name="author" content="">
-    <title>@yield('title','Master Page')</title>
+    <link  rel="icon" type="image/x-icon" href="{{asset('frontEnd/images/home/logo.png')}}" />
+
+      {{-- <meta property="og:image" content="{{$image_og}}" /> --}}
+      <meta property="og:description" content="{{$meta_desc}}" />
+      <meta property="og:title" content="{{$meta_title}}" />
+      <meta property="og:url" content="{{$url_canonical}}" />
+      <meta property="og:type" content="Mieu Shop" />
+
     <link href="{{asset('frontEnd/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontEnd/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontEnd/css/prettyPhoto.css')}}" rel="stylesheet">
