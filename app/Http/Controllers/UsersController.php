@@ -44,10 +44,14 @@ class UsersController extends Controller
         Session::forget('frontSession');
         return redirect('/');
     }
-    public function account(){
+    public function account(Request $request){
         $countries=DB::table('countries')->get();
         $user_login=User::where('id',Auth::id())->first();
-        return view('users.account',compact('countries','user_login'));
+        $meta_desc = 'Đăng nhập/Đăng ký';
+        $meta_title ='';
+        $meta_keywords = "áo ,quần,đầm ,váy,quần jean,nón";
+        $url_canonical = $request->url();
+        return view('users.account',compact('countries','user_login','meta_desc','meta_title','meta_keywords','url_canonical'));
     }
     public function updateprofile(Request $request,$id){
         $this->validate($request,[
